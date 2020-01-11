@@ -1,0 +1,15 @@
+{% extends 'youtube/parent.html'%}
+{% block title %}
+Home
+{% endblock %}
+{% block body %}
+<h1>Welcome to Youtube Django Clone</h1><br>
+<h2>Most recent videos</h2><br>
+{% for video in videos %}
+<div style="align-content: left; width:50%; border-color: black; border-width:1px; border-style:solid;"></div>
+<h4>{{ video.title }}</h4>
+<p>{{ video.description }}</p>
+<p>uploaded by: {{ video.user }}</p>
+<p><a href="{% url 'video' video.id %}">watch_video</a></p>
+{% endfor %}
+{% endblock %}

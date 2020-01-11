@@ -1,0 +1,13 @@
+{% extends 'youtube/parent.html'%}
+{% block title %}
+login
+{% endblock %}
+{% block body %}
+<h1>login_into_your_account</h1>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <!-- <input type="submit" value="Log in!"> -->
+    <button type="submit" class="btn btn-warning">login</button>
+</form>
+{% endblock %}

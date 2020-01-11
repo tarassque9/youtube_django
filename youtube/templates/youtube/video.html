@@ -1,0 +1,24 @@
+{% extends 'youtube/parent.html' %}
+{% block title %}
+video
+{% endblock %}
+{% block body %}
+<h4>{{ video.title }}</h4><br>
+<input type="file" accept="video/*">
+<video controls autoplay></video><br>
+<video width="320" height="240" controls>
+    <source src={{ video.path }} type="video/mp4">
+  Your browser does not support the video tag.
+  </video> 
+<p>{{ video.description }}</p>
+<form action="{% url 'comment' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="hidden" name="video" value="{{ video.id }}">
+    <br>
+    <button type="submit" class="btn btn-warning">comment</button>
+</form>
+
+Comments:
+{% endblock %}
+
