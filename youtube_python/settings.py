@@ -25,7 +25,7 @@ SECRET_KEY = '3z^gbk%7gvc9mukrf&^uu=0qvhzycr%qv%k_y8k&(&-q=nb%bp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://roombambar9.pythonanywhere.com']
 
 
 # Application definition
